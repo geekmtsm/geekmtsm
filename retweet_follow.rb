@@ -3,6 +3,7 @@ require 'open-uri'
 
 @rubytter = Rubytter.new
 date = Date.today.strftime('%Y-%m-%d')
+user_ids = []
 i = 1
 loop do
   tweets = @rubytter.search("ギークハウス since:#{date}", page: i)
@@ -18,6 +19,7 @@ loop do
 
     if Twitter.credentials?
       Twitter.retweet!(t.id)
+      user_ids << t.user.id
       sleep(5)
     else
       puts t.text
@@ -25,3 +27,5 @@ loop do
   end
   i += 1
 end
+
+Twitter.follow(user_ids)
