@@ -6,3 +6,5 @@ gem 'connpass'
 gem 'twitter'
 gem 'rubytter'
 gem 'nokogiri'
+gem 'activesupport', require: false
+gem 'rash'
