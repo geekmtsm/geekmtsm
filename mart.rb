@@ -9,7 +9,7 @@ tweets = []
 
 xml = open(SHUFOO_MAXVALUE_URL).read.encode('UTF-8')
 shop = Hashie::Rash.new(Hash.from_xml(xml)).shop
-if flyer = shop.chirashis.chirashi
+if shop.chirashis.is_a?(Hashie::Rash) && flyer = shop.chirashis.chirashi
   started_on = flyer.publish_start_time.slice(0, 10)
   ended_on = flyer.publish_end_time.slice(0, 10)
   if started_on == today.strftime('%Y/%m/%d')
