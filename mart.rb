@@ -18,6 +18,8 @@ if shop.chirashis.is_a?(Hashie::Rash) && flyer = shop.chirashis.chirashi
 end
 
 case today.day
+when 20, 30
+  tweets << "【SALE】マックスバリュエクスプレス木月住吉店 毎月20日・30日はお客さま感謝デー！イオンカード提示で5%オフ！ #{HASHTAG}"
 when 9, 19, 29
   tweets << "【SALE】生鮮市場ダイイチ 9のつく日は肉10%オフ！ #{HASHTAG}"
 end
